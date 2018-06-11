@@ -1,4 +1,6 @@
 # soma de boteco - v1 - Alexandre Abramson
+# Exercício de inclusão de nomes em um dicionário
+
 print ("Calculadora de Soma de Cerveja")
 contas = {}
 total = 0
