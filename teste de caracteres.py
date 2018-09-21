@@ -8,10 +8,10 @@ while 1:
         break
 if len(a) >= 3:
     while n <= len(a) - 3:
-        print(a[n], end=', ')
+        print(int(a[n]), end=', ')
         n += 1
-    print('%f e %f' % (a[len(a)-2], a[len(a)-1]))
+    print('%i e %i' % (int(a[len(a)-2]), int(a[len(a)-1])))
 elif len(a) == 2:
-    print(a[0], 'e', a[1])
+    print(int(a[0]), 'e', int(a[1]))
 elif len(a) == 1:
-    print(a[0])
+    print(int(a[0]))
