@@ -1,17 +1,14 @@
-### Programa para cálculo de tempo de download em relação a velocidade
+### Programa para cálculo teórico de tempo de download em relação a velocidade do link ###
 
 while True:
     tamanho_opcao = str(input('Cálculo do arquivo em (M)Bytes ou (m)bits?: '))
     if 'M' not in tamanho_opcao and 'm' not in tamanho_opcao:
         print('Por favor, escolher entre Megabytes (M) ou megabits (m)')
-    else:
-        break
+    else: break
 
 tamanho = float(input('Tamanho do arquivo: '))
 velocidade = float(input('Velocidade do link (em Mbps): '))
 tamanho_real = 0
-
-### Cálculo
 
 if tamanho_opcao == 'M':
     tamanho_real = tamanho*8
@@ -74,7 +71,7 @@ elif meses > 0:
     print('Tempo total de download: %.0f %s, %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (meses_corrigidos, p_mes, dias_corrigidos, p_dia, horas_corrigidas, p_hora, minutos_corrigidos, p_minuto, segundos, p_segundo))
 elif dias > 0:
     print('Tempo total de download: %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (dias, p_dia, horas_corrigidas,p_hora, minutos_corrigidos,p_minuto, segundos, p_segundo))
-elif horas > 0 and dias ==0:
+elif horas > 0 and dias == 0:
     print('Tempo total de download: %.0f %s, %0.f %s e %0.f %s.' % (horas_corrigidas,p_hora, minutos_corrigidos,p_minuto, segundos, p_segundo))
 elif minutos > 0 and horas == 0:
     print('Tempo total de download: %0.f %s e %0.f %s.' % (minutos_corrigidos, p_minuto, segundos, p_segundo))
