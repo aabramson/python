@@ -26,10 +26,9 @@ minutos_corrigidos = minutos%60
 horas = minutos//60
 horas_corrigidas = horas%24
 dias = horas//24
-dias_corrigidos = dias%365
+dias_corrigidos = dias%30
 meses = dias//30
 meses_corrigidos = meses%30
-
 anos = dias//365
 
 p_ano = None
@@ -69,8 +68,10 @@ if segundos == 1:
 else:
     p_segundo = str('segundos')
 
-if anos >= 1:
-    print('Tempo total de download: %.0f %s, %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (anos, p_ano, dias_corrigidos, p_dia, horas_corrigidas, p_hora, minutos_corrigidos, p_minuto, segundos, p_segundo))
+if anos > 0:
+    print('Tempo total de download: %.0f %s, %0.f %s, %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (anos, p_ano, meses_corrigidos, p_mes, dias_corrigidos, p_dia, horas_corrigidas, p_hora, minutos_corrigidos, p_minuto, segundos, p_segundo))
+elif meses > 0:
+    print('Tempo total de download: %.0f %s, %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (meses_corrigidos, p_mes, dias_corrigidos, p_dia, horas_corrigidas, p_hora, minutos_corrigidos, p_minuto, segundos, p_segundo))
 elif dias > 0:
     print('Tempo total de download: %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (dias, p_dia, horas_corrigidas,p_hora, minutos_corrigidos,p_minuto, segundos, p_segundo))
 elif horas > 0 and dias ==0:
@@ -78,4 +79,4 @@ elif horas > 0 and dias ==0:
 elif minutos > 0 and horas == 0:
     print('Tempo total de download: %0.f %s e %0.f %s.' % (minutos_corrigidos, p_minuto, segundos, p_segundo))
 elif (segundos > 0) and (segundos < 60) and minutos == 0 and horas == 0 and dias == 0:
-    print('Tempo total de download: %.0f %s.' % (segundos,p_segundo))
+    print('Tempo total de download: %.0f %s.' % (segundos, p_segundo))
