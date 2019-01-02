@@ -70,9 +70,9 @@ if anos > 0:
 elif meses > 0:
     print('Tempo total de download: %.0f %s, %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (meses_corrigidos, p_mes, dias_corrigidos, p_dia, horas_corrigidas, p_hora, minutos_corrigidos, p_minuto, segundos, p_segundo))
 elif dias > 0:
-    print('Tempo total de download: %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (dias, p_dia, horas_corrigidas,p_hora, minutos_corrigidos,p_minuto, segundos, p_segundo))
+    print('Tempo total de download: %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (dias, p_dia, horas_corrigidas, p_hora, minutos_corrigidos, p_minuto, segundos, p_segundo))
 elif horas > 0 and dias == 0:
-    print('Tempo total de download: %.0f %s, %0.f %s e %0.f %s.' % (horas_corrigidas,p_hora, minutos_corrigidos,p_minuto, segundos, p_segundo))
+    print('Tempo total de download: %.0f %s, %0.f %s e %0.f %s.' % (horas_corrigidas, p_hora, minutos_corrigidos, p_minuto, segundos, p_segundo))
 elif minutos > 0 and horas == 0:
     print('Tempo total de download: %0.f %s e %0.f %s.' % (minutos_corrigidos, p_minuto, segundos, p_segundo))
 elif (segundos > 0) and (segundos < 60) and minutos == 0 and horas == 0 and dias == 0:
