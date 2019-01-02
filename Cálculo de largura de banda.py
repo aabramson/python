@@ -28,8 +28,8 @@ horas_corrigidas = horas%24
 dias = horas//24
 dias_corrigidos = dias%30
 meses = dias//30
-meses_corrigidos = meses%30
-anos = dias//365
+meses_corrigidos = meses%12
+anos = meses//12
 
 p_ano = None
 p_mes = None
