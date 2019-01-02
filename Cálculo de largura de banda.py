@@ -1,7 +1,7 @@
 ### Programa para cálculo de tempo de download em relação a velocidade
 
 while True:
-    tamanho_opcao = str(input('Cálculo do arquivo em MB ou mb (selecione M ou m)?: '))
+    tamanho_opcao = str(input('Cálculo do arquivo em (M)Bytes ou (m)bits?: '))
     if 'M' not in tamanho_opcao and 'm' not in tamanho_opcao:
         print('Por favor, escolher entre Megabytes (M) ou megabits (m)')
     else:
@@ -24,18 +24,58 @@ segundos = tempo%60
 minutos = tempo//60
 minutos_corrigidos = minutos%60
 horas = minutos//60
-horas_corrigidas = horas%60
+horas_corrigidas = horas%24
 dias = horas//24
 dias_corrigidos = dias%365
+meses = dias//30
+meses_corrigidos = meses%30
+
 anos = dias//365
 
+p_ano = None
+p_mes = None
+p_dia = None
+p_hora = None
+p_minuto = None
+p_segundo = None
+
+if anos == 1:
+    p_ano = str('ano')
+else:
+    p_ano = str('anos')
+
+if meses_corrigidos == 1:
+    p_mes = str('mês')
+else:
+    p_mes = str('meses')
+
+if dias_corrigidos == 1:
+    p_dia = str('dia')
+else:
+    p_dia = str('dias')
+
+if horas_corrigidas == 1:
+    p_hora = str('hora')
+else:
+    p_hora = str('horas')
+
+if minutos_corrigidos == 1:
+    p_minuto = str('minuto')
+else:
+    p_minuto = str('minutos')
+
+if segundos == 1:
+    p_segundo = str('segundo')
+else:
+    p_segundo = str('segundos')
+
 if anos >= 1:
-    print('Tempo total de download: %.0f anos, %.0f dias, %.0f horas, %0.f minutos e %0.f segundos' % (anos, dias_corrigidos, horas_corrigidas, minutos_corrigidos, segundos))
+    print('Tempo total de download: %.0f %s, %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (anos, p_ano, dias_corrigidos, p_dia, horas_corrigidas, p_hora, minutos_corrigidos, p_minuto, segundos, p_segundo))
 elif dias > 0:
-    print('Tempo total de download: %.0f dias, %.0f horas, %0.f minutos e %0.f segundos' % (dias, horas_corrigidas, minutos_corrigidos, segundos))
+    print('Tempo total de download: %.0f %s, %.0f %s, %0.f %s e %0.f %s.' % (dias, p_dia, horas_corrigidas,p_hora, minutos_corrigidos,p_minuto, segundos, p_segundo))
 elif horas > 0 and dias ==0:
-    print('Tempo total de download: %.0f horas, %0.f minutos e %0.f segundos' % (horas_corrigidas, minutos_corrigidos, segundos))
+    print('Tempo total de download: %.0f %s, %0.f %s e %0.f %s.' % (horas_corrigidas,p_hora, minutos_corrigidos,p_minuto, segundos, p_segundo))
 elif minutos > 0 and horas == 0:
-    print('Tempo total de download: %.0f minutos e %.0f segundos.' % (minutos, segundos))
+    print('Tempo total de download: %0.f %s e %0.f %s.' % (minutos_corrigidos, p_minuto, segundos, p_segundo))
 elif (segundos > 0) and (segundos < 60) and minutos == 0 and horas == 0 and dias == 0:
-    print('Tempo total de download: %.0f segundos.' % (segundos))
+    print('Tempo total de download: %.0f %s.' % (segundos,p_segundo))
